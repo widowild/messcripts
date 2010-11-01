@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:latin1 -*-
 # Donner la valeur md5 d'un fichier
 # dépendances: zenity

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
- 
+#====================
+# dependance: zenity
 import os
  
 iso_file = os.popen("zenity --file-selection").read().strip()

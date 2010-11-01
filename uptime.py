@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # For python 3
+# Voir l'uptime grâce à ce script
 import os
  
 #----------------------------------------
