@@ -8,6 +8,7 @@ url="http://github.com/widowild/messcripts"
 license=("GPL3")
 arch=('any')
 conflicts=()
+makedepends=('git')
 provides=()
 depends=('python')
 md5sums=()
@@ -16,22 +17,21 @@ _gitroot="git://github.com/widowild/messcripts.git"
 _gitname="messcripts"
 
 build() {
-  cd $srcdir
-  msg "Connecting to the GIT server...."
-  
-  if [[ -d $srcdir/$_gitname ]] ; then
-    cd $_gitname
-    git pull origin
-    msg "The local files are updated."
-  else
-    git clone $_gitroot $_gitname
-  fi
-  
-  msg "GIT checkout done"
-  msg "Starting make..."
+  msg "Connecting to gitorious.org GIT server...."
 
-  git clone $srcdir/$_gitname $srcdir/$_gitname-build
+if [ -d $srcdir/$_gitname ] ; then
+   cd $_gitname && git pull origin
+   msg "The local files are updated."
+else
+   git clone $_gitroot
+fi
 
-  cd $srcdir/$_gitname-build
-    install -Dm 755 *.py ${pkgdir}/opt/${pkgname}*.py || return 1
+msg "GIT checkout done or server timeout"
+msg "Starting make..."
+
+rm -rf $srcdir/$_gitname-build
+cp -r $srcdir/$_gitname $srcdir/$_gitname-build
+
+install -d ${pkgdir}/opt/${pkgname}/
+install -Dm 755 *.py ${pkgdir}/opt/${pkgname}/ || return 1
 }
