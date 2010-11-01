@@ -1,7 +1,7 @@
 # Maintainer: wido <widomaker2k7@gmail.com>
 
 pkgname=messcripts
-pkgver=20101020
+pkgver=20101101
 pkgrel=1
 pkgdesc="Creation de scripts personnels pour python 3"
 url="http://github.com/widowild/messcripts"
