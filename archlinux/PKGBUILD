@@ -2,7 +2,7 @@
 
 pkgname=messcripts
 pkgver=20101101
-pkgrel=1
+pkgrel=2
 pkgdesc="Creation de scripts personnels pour python 3"
 url="http://github.com/widowild/messcripts"
 license=("GPL3")
@@ -29,9 +29,9 @@ fi
 msg "GIT checkout done or server timeout"
 msg "Starting make..."
 
-rm -rf $srcdir/$_gitname-build
-cp -r $srcdir/$_gitname $srcdir/$_gitname-build
+rm -rf ${srcdir}/${_gitname}-build
+cp -r ${srcdir}/${_gitname} ${srcdir}/${_gitname}-build
 
 install -d ${pkgdir}/opt/${pkgname}/
-install -Dm 755 *.py ${pkgdir}/opt/${pkgname}/ || return 1
+install -Dm 755 ${srcdir}/${_gitname}-build/*.py ${pkgdir}/opt/${pkgname}/ || return 1
 }
