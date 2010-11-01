@@ -1,25 +1,33 @@
 #!/usr/bin/env python3
-# -*- coding:latin1 -*-
+# -*- coding:utf-8 -*-
+#=================
 # Donner la valeur md5 d'un fichier
-# dépendances: zenity
 
 from tkinter import *
-import os
+from tkinter.filedialog import askopenfilename
+import subprocess
 
-def md5file():
-    fichier = os.popen("zenity --file-selection").read().strip()
-    if not fichier: exit(0)
-
+# détermine la valeur md5sum
 def resultat():
-    result = os.system(md5sum fichier)
+    fichier = askopenfilename()
+    p = subprocess.Popen(["/usr/bin/md5sum", fichier], stdout=subprocess.PIPE)
+    myString.set(p.stdout.readline().split()[0])
 
 fen1 = Tk()
-fen1.title("Openbox")
-#fen1.maxsize(width=300, height=60)
-#fen1.minsize(width=150, height=30)
-#fen1.resizable(width=YES, height=NO)
-bou1 = Button(fen1, text='Lancer', command=md5file)
-bou1.pack()
+fen1.title("MD5SUM")
+fen1.maxsize(width=300, height=60)
+fen1.minsize(width=150, height=30)
+fen1.resizable(width=YES, height=NO)
+
+# Valeur md5
+myString=StringVar()
+Label(fen1,textvariable=myString).pack()
+myString.set("valeur md5sum.")
+
+# Creation des boutons
+
+bou1 = Button(fen1, text='Lancer', command=resultat)
+bou1.pack(side="left")
 bou4 = Button(fen1, text='Annuler', command=fen1.quit)
-bou4.pack()
+bou4.pack(side="left")
 fen1.mainloop()
