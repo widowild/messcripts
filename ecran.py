@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding:utf8 -*-
 #=================
-# Dependance:
-# python, tk
-
+# python3
+# tkinter
+# xset
+#=================
+# Eteindre l'écran avec xset
+#=================
 from tkinter import *
 import os
 import subprocess
 
 # Eteindre l'ecran
 def blackall():
-    pid = subprocess.Popen(["xset dpms force off"]).pid
-    fen1.destroy()
+    print("Eteindre l'écran")
+    output = subprocess.Popen(['xset', 'dpms', 'force', 'off'])
 
 fen1 = Tk()
 fen1.title("Ecran")
