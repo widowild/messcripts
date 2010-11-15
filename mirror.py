@@ -47,7 +47,7 @@ if not os.path.isfile(lock): # test existence d'un fichier
         # donne en retour: Mon Nov 15 18:01:59 2010
         vlastsync = linecache.getline(lastsync,1).rstrip('\n')
         vlastsync = int(vlastsync)
-        print(time.ctime(vlastsync))
+        print("Dernière mise à jour:", time.ctime(vlastsync))
         linecache.clearcache() # On vide le cache
 
 else :
