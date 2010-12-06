@@ -25,7 +25,6 @@ def shutdown():
     print('résultat:', pid3)
     fen1.destroy()
 
-    
 fen1 = Tk()
 fen1.title("Openbox")
 fen1.maxsize(width=300, height=60)
