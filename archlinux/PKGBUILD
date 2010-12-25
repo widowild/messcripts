@@ -32,6 +32,8 @@ msg "Starting make..."
 rm -rf ${srcdir}/${_gitname}-build
 cp -r ${srcdir}/${_gitname} ${srcdir}/${_gitname}-build
 
-install -d ${pkgdir}/opt/${pkgname}/
-install -Dm 755 ${srcdir}/${_gitname}-build/*.py ${pkgdir}/opt/${pkgname}/ || return 1
+install -d ${pkgdir}/opt/${pkgname}/usr/bin
+install -Dm 755 ${srcdir}/${_gitname}-build/*.py ${pkgdir}/opt/${pkgname}/usr/bin/
+# License 
+install -Dm 644 ${srcdir}/${_gitname}-build/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
 }
