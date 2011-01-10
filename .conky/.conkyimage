@@ -1,0 +1,5 @@
+own_window yes
+update_interval 1
+double_buffer yes
+TEXT
+${image /home/wido/Desktop/Hegre-art_Mirta_Complete_Collation/mirta-530.jpg -p 20,20 -s 250x250}

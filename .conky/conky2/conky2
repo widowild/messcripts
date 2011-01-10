@@ -1,0 +1,40 @@
+own_window yes
+own_window_type normal
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window yes
+own_window_type override
+use_xft yes
+xftfont Acknowledge TT (BRK):size=10
+xftalpha 0.8
+update_interval 1
+total_run_times 0
+alignment bottom_right
+maximum_width 840
+minimum_size 840 90 #L/H
+gap_x 231 #gauche/droite
+gap_y 35 #Haut/bas
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 8
+border_margin 4
+border_width 1
+default_color	B3B3B3
+color1 E2E2E2   #gris clair
+color2 000000
+double_buffer yes
+text_buffer_size 2048
+no_buffers yes
+uppercase no
+cpu_avg_samples 4
+net_avg_samples 4
+override_utf8_locale yes
+use_spacer none
+use_spacer yes
+TEXT
+${hr 2}
+${alignc}${font Acknowledge TT (BRK):size=11}${color1}---------------------------------------------------------------------------- ${color FE661A}SYSTEM LOG${color1} ----------------------------------------------------------------------------${font}
+${color}${hr 2}
+${color B3B3B3}${font sans:bold:size=8}${execi 10 tail -n6 /var/log/messages | fold -w145}
+${color}${hr 2}

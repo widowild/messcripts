@@ -1,0 +1,89 @@
+own_window yes
+own_window_type normal
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window yes
+own_window_type override
+use_xft yes
+xftfont Acknowledge TT (BRK):size=10
+xftalpha 0.8
+update_interval 1
+total_run_times 0
+alignment top_right
+maximum_width 185
+minimum_size 185 90 #L/H
+gap_x 30 #gauche/droite
+gap_y 32 #Haut/bas
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 8
+border_margin 4
+border_width 1
+default_color	B3B3B3
+color1 E2E2E2   #gris clair
+double_buffer yes
+text_buffer_size 1024
+no_buffers yes
+uppercase yes
+cpu_avg_samples 4
+net_avg_samples 4
+override_utf8_locale yes
+use_spacer none
+use_spacer yes
+TEXT
+${hr 2}
+${alignc}${font Acknowledge TT (BRK):size=11}${color1}-------- ${color FE661A}ACTIVITY DISK${color1} --------${font}
+${color}${hr 2}
+${color FE661A}SDA:
+${color}READ: ${color D45617}${diskio_read sda}
+${color}WRITE: ${color D45617}${diskio_write sda}
+${color 943D12}${diskiograph_read sda 24,92,5 000000 ddaa00}${color D45617}${diskiograph_write sda 24,92,5 000000 ddaa00}
+${color}${hr 2}
+${color FE661A}SDB:
+${color}READ: ${color D45617}${diskio_read sdb}
+${color}WRITE: ${color D45617}${diskio_write sdb}
+${color D45617}${diskiograph_read sdb 25,92,5 000000 ddaa00}${color 943D12}${diskiograph_write sdb 25,92,5 000000 ddaa00}
+${color}${hr 2}
+${color FE661A}SDC:
+${color}READ: ${color D45617}${diskio_read sdc}
+${color}WRITE: ${color D45617}${diskio_write sdc}
+${color 943D12}${diskiograph_read sdc 24,92,5 000000 ddaa00}${color D45617}${diskiograph_write sdc 24,92,5 000000 ddaa00}
+${color}${hr 2}
+${alignc}${font Acknowledge TT (BRK):size=11}${color1}------------ ${color FE661A}NETWORK${color1} ------------${font}
+${color}${hr 2}
+${color}up: ${color D45617}${upspeed eth0}
+${color}DOWN: ${color D45617}${downspeed eth0}
+${color}TOTAL UPLOAD: ${color D45617}${totalup eth0}
+${color}TOTAL DOWNLOAD: ${color D45617}${totaldown eth0}
+${color}passthrough interface: ${color D45617}$gw_iface
+${color}passthrough IP: ${color D45617}$gw_ip
+${color}LOCAL IP: ${color D45617}${addr eth0}
+${color}PUBLIC IP:${color D45617}${execi 1800 /home/duplicity-corporation/.conky/conky2/scriptip.sh}
+${color}${hr 2}
+${alignc}${font Acknowledge TT (BRK):size=11}${color1}------- ${color FE661A}ports activity${color1} -------${font}
+${color}${hr 2}
+${alignc}${color}tOTAL connections: ${color D45617}${tcp_portmon 1 65535 count}
+${color}${hr 2}
+${color}ENTERING: ${color D45617}${tcp_portmon 1 32767 count}${alignr}${color}OUTGOING: ${color D45617}${tcp_portmon 32768 61000 count}
+${color}${hr 2}
+${color}RM host ip:${alignr}LOCAL PORT:
+${color D45617}${tcp_portmon 1 65535 rip 0}${alignr}${tcp_portmon 1 65535 lport 0}
+${color D45617}${tcp_portmon 1 65535 rip 1}${alignr}${tcp_portmon 1 65535 lport 1}
+${color D45617}${tcp_portmon 1 65535 rip 2}${alignr}${tcp_portmon 1 65535 lport 2}
+${color D45617}${tcp_portmon 1 65535 rip 3}${alignr}${tcp_portmon 1 65535 lport 3}
+${color D45617}${tcp_portmon 1 65535 rip 4}${alignr}${tcp_portmon 1 65535 lport 4}
+${color D45617}${tcp_portmon 1 65535 rip 5}${alignr}${tcp_portmon 1 65535 lport 5}
+${color D45617}${tcp_portmon 1 65535 rip 6}${alignr}${tcp_portmon 1 65535 lport 6}
+${color D45617}${tcp_portmon 1 65535 rip 7}${alignr}${tcp_portmon 1 65535 lport 7}
+${color}${hr 2}
+${alignc}${font Acknowledge TT (BRK):size=11}${color1}----------- ${color FE661A}RHYTMBOX${color1} -----------${font}
+${color}${hr 2}
+${if_running rhythmbox}
+${color}TITLE: ${color D45617}${execi 10 rhythmbox-client --print-playing-format "%tt" --no-start | grep -v Inconnu | grep -v Pas\ de\ lecture\ en\ cours} 
+${color}ALBUM: ${color D45617}${execi 10 rhythmbox-client --print-playing-format "%at" --no-start | grep -v Inconnu | grep -v Pas\ de\ lecture\ en\ cours} 
+${color}GENRE: ${color D45617}${execi 10 rhythmbox-client --print-playing-format "%ag" --no-start | grep -v Inconnu | grep -v Pas\ de\ lecture\ en\ cours}
+
+${color D45617}${execi 1 rhythmbox-client --print-playing-format "%te" --no-start | grep -v Pas\ de\ lecture\ en\ cours}${alignr}${execi 1 rhythmbox-client --print-playing-format "%td" --no-start | grep -v Inconnu | grep -v Pas\ de\ lecture\ en\ cours}
+${color 943D12}${execibar 1 /home/duplicity-corporation/.conky/conky2/rhythmbox.sh progress}${else}$endif
+${color}${hr 2}

@@ -1,0 +1,100 @@
+
+#Barre horizontal
+# Le clignotement, ça pique les yeux 
+double_buffer yes 
+
+#texte tronqué
+text_buffer_size 2048
+
+# Ajoute des espaces après certains objets pour éviter de les faire bouger.
+# Fonctionne uniquement avec les polices Fixes
+use_spacer right
+
+#caractère bizarre
+#override_utf8_locale no
+#uppercase no
+
+# Si jamais on voulait plusieurs Conkys simultanément 
+#own_window  yes 
+own_window_transparent yes #no # Donne la transparence
+own_window_type normal #normal 
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+#======================
+# Comme une fenêtre:
+#======================
+#own_window_type normal
+#own_window_hints skip_taskbar,skip_pager
+#own_window_title Conky
+#======================
+# Default colors and also border colors
+default_color FFFFDD
+#medium blue 083146
+#dark blue 041e2c
+#good blue 1994d1
+color1 1994d1
+# Gris-Blanc
+color2 cccccc
+# Rouge
+color3 a90100
+#gris:
+color4 202020
+# Vert
+color5 88f121
+#Jaune
+color6 ecef00
+#Bleu pour le download
+color7 00c6ff
+# Rouge pour le upload
+color8 9f0000
+#Gris
+color9 777777
+#default_shade_color 888888
+#default_outline_color 888888
+own_window_colour 000000
+
+# Bordures 
+draw_borders no 
+border_margin 1 
+
+# Ombres 
+draw_shades yes #no
+
+# Position 
+gap_x 6 # Valeur 6
+gap_y 6 # Valeur 6
+# alignment top-right
+alignment top_right # alignment bottom_left 
+
+# Comportement 
+update_interval 1 
+
+#==========  COULEUR
+# FFFFFF Blanc
+
+# Polices 
+use_xft yes 
+xftfont visitor Bt :size=7
+xftalpha 1.0
+#xftfont bauhaus:pixelsize=10 
+
+# Pas bouger ! 
+use_spacer no 
+minimum_size 1268 0
+# Longueur du conky
+#maximum_width 1280
+
+###	Flux RSS:
+## le point tech_net 
+##http://www.lepoint.fr/content/system/rss/tech_net/tech_net_doc.xml
+
+# http://www.lesgravesinfos.fr/rss/infos.php
+#http://www.france-info.com/rss/accueil.xml
+# ${goto 970}${color2}IP Internet:  ${goto 1030}${color1}${exec wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1}
+#Flux Forum-ubuntu: ${execi 300 /home/wido/.conky/forum-ubuntu/flux-personnel.sh } ${rss file:///var/tmp/user_feed_cache-wido/forum-ubuntu/rss.xml 1 item_titles 1 item_desc 1}
+
+# ${goto 200}${color2}Archlinux: ${goto 250}${color1}${rss http://www.archlinux.org/feeds/packages/ 1 item_titles 1}
+
+TEXT 
+${voffset -1}${color6}(|[°_°]|) ${color2}${time %A %d %B %Y} ${color2}- ${color1}${time %H:%M:%S} ${color2}@ ${color2}RAM ${color1}${font}${mem} ${color2}@ ${color7}DS${downspeed eth0} ${color2}| ${color8}US ${upspeed eth0} ${color7}TD ${totaldown eth0} ${color2}| ${color8}TU${totalup eth0} ${color2}@ ${color2}Ports Ouverts ${color1}${tcp_portmon 1 65535 count} ${color2}@ ${color1}${addr eth0} ${color2}@ ${color2}CPU ${color1}${font}${cpu cpu1}%  ${color1}${font}${cpu cpu2}%  ${color1}${font}${cpu cpu3}%  ${color1}${font}${cpu cpu4}% ${color2}@ ${color5}${kernel} ${color2}@ ${color2}Uptime ${color5}${font}${uptime_short}
+${if_mpd_playing}${color1}(|[°_°]|) ${color2}${mpd_status} ${mpd_track} - ${color1}${font}${mpd_smart}${color2} ${mpd_bar 5,100} ${color1}${mpd_elapsed}/${mpd_length} ${color2}@${color1}${mpd_bitrate}Kbps${endif} ${color2}@ ${color1}${addr wlan0} ${color2}@ ${color7}DS${downspeed wlan0} ${color2}| ${color8}US ${upspeed wlan0} ${color7}TD ${totaldown wlan0} ${color2}| ${color8}TU${totalup wlan0}

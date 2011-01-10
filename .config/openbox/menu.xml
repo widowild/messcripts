@@ -1,0 +1,1451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
+	<menu id="root-menu" label="openbox3">
+		<item label="Console">
+			<action name="Execute">
+				<execute>
+					terminal
+				</execute>
+			</action>
+		</item>
+		<item label="PcmanFM">
+			<action name="Execute">
+				<execute>
+					pcmanfm-mod
+				</execute>
+			</action>
+		</item>
+		<item label="Thunar">
+			<action name="Execute">
+				<execute>
+					thunar
+				</execute>
+			</action>
+		</item>
+		<item label="Urxvt">
+			<action name="Execute">
+				<execute>
+					urxvt
+				</execute>
+			</action>
+		</item>
+		<item label="Nautilus">
+			<action name="Execute">
+				<execute>
+					nautilus
+				</execute>
+			</action>
+		</item>
+		<item label="Vifm">
+			<action name="Execute">
+				<execute>
+					terminal -e vifm
+				</execute>
+			</action>
+		</item>
+		<item label="Tilda">
+			<action name="Execute">
+				<execute>
+					tilda
+				</execute>
+			</action>
+		</item>
+		<item label="Opera">
+			<action name="Execute">
+				<execute>
+					/home/wido/.script/python/opera.py
+				</execute>
+			</action>
+		</item>
+		<item label="Éditeur">
+			<action name="Execute">
+				<execute>
+					terminal -e gvim
+				</execute>
+			</action>
+		</item>
+		<item label="Exécuter">
+			<action name="Execute">
+				<execute>
+					gmrun
+				</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="client-list-combined-menu"/>
+		<separator label="Applications"/>
+		<menu id="Accessoires" label="Accessoires">
+			<item label="Calculatrice">
+				<action name="Execute">
+					<execute>
+						galculator
+					</execute>
+				</action>
+			</item>
+			<item label="Gestionnaire d'archives">
+				<action name="Execute">
+					<execute>
+						file-roller
+					</execute>
+				</action>
+			</item>
+			<item label="Search for Files or Folders">
+				<action name="Execute">
+					<execute>
+						pcmanfm --find-files
+					</execute>
+				</action>
+			</item>
+			<item label="Guake">
+				<action name="Execute">
+					<execute>
+						guake
+					</execute>
+				</action>
+			</item>
+			<item label="Terminal administrateur">
+				<action name="Execute">
+					<execute>
+						gksu -l gnome-terminal
+					</execute>
+				</action>
+			</item>
+			<item label="gVim">
+				<action name="Execute">
+					<execute>
+						gvim
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Graphiques" label="Graphiques">
+			<item label="Éditeur d'image GIMP">
+				<action name="Execute">
+					<execute>
+						gimp-2.6
+					</execute>
+				</action>
+			</item>
+			<item label="Blender">
+				<action name="Execute">
+					<execute>
+						blender
+					</execute>
+				</action>
+			</item>
+			<item label="Inkscape">
+				<action name="Execute">
+					<execute>
+						inkscape
+					</execute>
+				</action>
+			</item>
+			<item label="Makehuman">
+				<action name="Execute">
+					<execute>
+						makehuman
+					</execute>
+				</action>
+			</item>
+			<item label="Mirage">
+				<action name="Execute">
+					<execute>
+						mirage
+					</execute>
+				</action>
+			</item>
+			<item label="RecordMyDesktop">
+				<action name="Execute">
+					<execute>
+						gtk-recordMyDesktop
+					</execute>
+				</action>
+			</item>
+			<item label="Visionneur d'images">
+				<action name="Execute">
+					<execute>
+						gpicview
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="AudioVideo" label="Audio et Video">
+			<item label="AcetoneISO">
+				<action name="Execute">
+					<execute>
+						acetoneiso
+					</execute>
+				</action>
+			</item>
+			<item label="Asunder">
+				<action name="Execute">
+					<execute>
+						asunder
+					</execute>
+				</action>
+			</item>
+			<item label="DVD Decrypter">
+				<action name="Execute">
+					<execute>
+						wine '/home/wido/.wine/drive_c/Program Files/DVD Decrypter/DVDDecrypter.exe'
+					</execute>
+				</action>
+			</item>
+			<item label="EasyTAG">
+				<action name="Execute">
+					<execute>
+						easytag
+					</execute>
+				</action>
+			</item>
+			<item label="Gnome Alsamixer">
+				<action name="Execute">
+					<execute>
+						gnome-alsamixer
+					</execute>
+				</action>
+			</item>
+			<item label="GNOME MPlayer">
+				<action name="Execute">
+					<execute>
+						gnome-mplayer
+					</execute>
+				</action>
+			</item>
+			<item label="Grip">
+				<action name="Execute">
+					<execute>
+						grip
+					</execute>
+				</action>
+			</item>
+			<item label="Lecteur multimédia VLC">
+				<action name="Execute">
+					<execute>
+						vlc
+					</execute>
+				</action>
+			</item>
+			<item label="Mcmpc">
+				<action name="Execute">
+					<execute>
+						terminal -e ncmpc
+					</execute>
+				</action>
+			</item>
+			<item label="Miro">
+				<action name="Execute">
+					<execute>
+						miro
+					</execute>
+				</action>
+			</item>
+			<item label="Mpc">
+				<action name="Execute">
+					<execute>
+						terminal -e mpc
+					</execute>
+				</action>
+			</item>
+			<item label="Ncmpcpp">
+				<action name="Execute">
+					<execute>
+						terminal -e ncmpcpp
+					</execute>
+				</action>
+			</item>
+			<item label="Smplayer">
+				<action name="Execute">
+					<execute>
+						smplayer
+					</execute>
+				</action>
+			</item>
+			<item label="Sonata">
+				<action name="Execute">
+					<execute>
+						sonata
+					</execute>
+				</action>
+			</item>
+			<item label="Xfburn">
+				<action name="Execute">
+					<execute>
+						xfburn
+					</execute>
+				</action>
+			</item>
+			<item label="GmiMMS">
+				<action name="Execute">
+					<execute>
+						gmimms
+					</execute>
+				</action>
+			</item>
+			<item label="streamtuner">
+				<action name="Execute">
+					<execute>
+						streamtuner2
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Bureautique" label="Bureautique">
+			<item label="Apvlv">
+				<action name="Execute">
+					<execute>
+						apvlv
+					</execute>
+				</action>
+			</item>
+			<item label="Dictionnaire Le Littré">
+				<action name="Execute">
+					<execute>
+						littre
+					</execute>
+				</action>
+			</item>
+			<item label="Emacs">
+				<action name="Execute">
+					<execute>
+						emacs
+					</execute>
+				</action>
+			</item>
+			<item label="Epdfview">
+				<action name="Execute">
+					<execute>
+						epdfview
+					</execute>
+				</action>
+			</item>
+			<item label="FBReader">
+				<action name="Execute">
+					<execute>
+						FBReader
+					</execute>
+				</action>
+			</item>
+			<item label="Fontmatrix">
+				<action name="Execute">
+					<execute>
+						fontmatrix
+					</execute>
+				</action>
+			</item>
+			<item label="Gestion des imprimantes de OpenOffice.org 3.1">
+				<action name="Execute">
+					<execute>
+						/usr/bin/spadmin
+					</execute>
+				</action>
+			</item>
+			<item label="Gnucash">
+				<action name="Execute">
+					<execute>
+						gnucash
+					</execute>
+				</action>
+			</item>
+			<item label="Homebank">
+				<action name="Execute">
+					<execute>
+						homebank
+					</execute>
+				</action>
+			</item>
+			<item label="Kmymoney">
+				<action name="Execute">
+					<execute>
+						kmymoney
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1 Base">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice -base
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1 Calc">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice -calc
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1 Draw">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice -draw
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1 Impress">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice -impress
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1 Math">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice -math
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1 Writer">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice -writer
+					</execute>
+				</action>
+			</item>
+			<item label="OpenOffice.org 3.1">
+				<action name="Execute">
+					<execute>
+						/usr/bin/soffice
+					</execute>
+				</action>
+			</item>
+			<item label="QCad">
+				<action name="Execute">
+					<execute>
+						/usr/bin/qcad
+					</execute>
+				</action>
+			</item>
+			<item label="Verbiste">
+				<action name="Execute">
+					<execute>
+						verbiste-gtk
+					</execute>
+				</action>
+			</item>
+			<item label="Xpdf">
+				<action name="Execute">
+					<execute>
+						xpdf
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Jeux" label="Jeux">
+			<menu id="Jeux-462828" label="Wine - 64 bits">
+				<item label="New Item">
+					<action name="Execute">
+						<execute>
+							command
+						</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="Jeux-831541" label="Wine - 32 bits">
+				<item label="Oblivion">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh &quot;/home/wido/win32/drive_c/Program Files/oblivion/Oblivion.exe&quot;&quot;
+						</execute>
+					</action>
+				</item>
+				<item label="Farcry">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh &quot;/home/wido/farcry/FarCry/unCab/Bin32/FarCry.exe&quot;
+						</execute>
+					</action>
+				</item>
+				<item label="Starcraft">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh '/home/wido/win32/drive_c/Program Files/StarCraft/StarCraft.exe'
+						</execute>
+					</action>
+				</item>
+				<item label="Warcraft III Frozen Throne">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh 'c:\Program Files\Warcraft III\Frozen Throne.exe' -opengl
+						</execute>
+					</action>
+				</item>
+				<item label="Diablo II">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh '/home/wido/win32/drive_c/Program Files/Diablo II/Game.exe'
+						</execute>
+					</action>
+				</item>
+				<item label="Warcraft III">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh 'c:\Program Files\Warcraft III\Warcraft III.exe' -opengl
+						</execute>
+					</action>
+				</item>
+				<item label="Painkiller">
+					<action name="Execute">
+						<execute>
+							wine &quot;/home/wido/.wine/drive_c/Program Files/DreamCatcher/Painkiller Black Edition/Bin/Painkiller.exe&quot; -opengl
+						</execute>
+					</action>
+				</item>
+				<item label="Unreal Tournament 3">
+					<action name="Execute">
+						<execute>
+							wine '/home/wido/.wine/drive_c/Program Files/Unreal Tournament 3/Binaries/UT3.exe' -opengl
+						</execute>
+					</action>
+				</item>
+				<item label="Stalker">
+					<action name="Execute">
+						<execute>
+							wine '/home/wido/.wine/drive_c/Program Files/THQ/S.T.A.L.K.E.R. - Shadow of Chernobyl/bin/XR_3DA.exe' -nodisort -nointro -dx80
+						</execute>
+					</action>
+				</item>
+				<item label="Cossacks">
+					<action name="Execute">
+						<execute>
+							sh /home/wido/.script/cossacks.sh
+						</execute>
+					</action>
+				</item>
+				<item label="Command and conquer">
+					<action name="Execute">
+						<execute>
+							wine '/home/wido/.wine/drive_c/Program Files/EA Games/Command &amp; Conquer The First Decade/Command &amp; Conquer(tm) Tiberian Sun(tm)/SUN/SUN.EXE'
+						</execute>
+					</action>
+				</item>
+				<item label="Vlc">
+					<action name="Execute">
+						<execute>
+							/home/wido/.script/wine32.sh &quot;/home/wido/win32/drive_c/Program Files/VideoLAN/VLC/vlc.exe&quot;
+						</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="Jeux-50854" label="Achat">
+				<item label="Lugaru">
+					<action name="Execute">
+						<execute>
+							lugaru
+						</execute>
+					</action>
+				</item>
+				<item label="Cortex Command">
+					<action name="Execute">
+						<execute>
+							cortexcommand
+						</execute>
+					</action>
+				</item>
+				<item label="Machinarium">
+					<action name="Execute">
+						<execute>
+							machinarium
+						</execute>
+					</action>
+				</item>
+				<item label="Gish">
+					<action name="Execute">
+						<execute>
+							gish
+						</execute>
+					</action>
+				</item>
+				<item label="Osmos">
+					<action name="Execute">
+						<execute>
+							osmos
+						</execute>
+					</action>
+				</item>
+				<item label="Revenge of the Titans">
+					<action name="Execute">
+						<execute>
+							revenge
+						</execute>
+					</action>
+				</item>
+				<item label="Droid Assault">
+					<action name="Execute">
+						<execute>
+							droidassault
+						</execute>
+					</action>
+				</item>
+				<item label="Ultratron">
+					<action name="Execute">
+						<execute>
+							ultratron
+						</execute>
+					</action>
+				</item>
+				<item label="World Of Goo">
+					<action name="Execute">
+						<execute>
+							worldofgoo
+						</execute>
+					</action>
+				</item>
+				<item label="Titan Attacks">
+					<action name="Execute">
+						<execute>
+							titanattacks
+						</execute>
+					</action>
+				</item>
+			</menu>
+			<item label="0ad (svn)">
+				<action name="Execute">
+					<execute>
+						0ad-svn
+					</execute>
+				</action>
+			</item>
+			<item label="Alien Arena">
+				<action name="Execute">
+					<execute>
+						alienarena
+					</execute>
+				</action>
+			</item>
+			<item label="Armagetronad">
+				<action name="Execute">
+					<execute>
+						armagetronad
+					</execute>
+				</action>
+			</item>
+			<item label="Asciiportal">
+				<action name="Execute">
+					<execute>
+						asciiportal
+					</execute>
+				</action>
+			</item>
+			<item label="Astromenace">
+				<action name="Execute">
+					<execute>
+						astromenace
+					</execute>
+				</action>
+			</item>
+			<item label="Blood Frontier">
+				<action name="Execute">
+					<execute>
+						bloodfrontier
+					</execute>
+				</action>
+			</item>
+			<item label="CrossOver">
+				<action name="Execute">
+					<execute>
+						/opt/cxgames/bin/cxinstaller
+					</execute>
+				</action>
+			</item>
+			<item label="B tanks">
+				<action name="Execute">
+					<execute>
+						btanks
+					</execute>
+				</action>
+			</item>
+			<item label="Chromium B.S.U.">
+				<action name="Execute">
+					<execute>
+						chromium-bsu
+					</execute>
+				</action>
+			</item>
+			<item label="Counter-Strike 2D">
+				<action name="Execute">
+					<execute>
+						CounterStrike2D
+					</execute>
+				</action>
+			</item>
+			<item label="Cube">
+				<action name="Execute">
+					<execute>
+						/usr/bin/cube
+					</execute>
+				</action>
+			</item>
+			<item label="Egoboo">
+				<action name="Execute">
+					<execute>
+						egoboo
+					</execute>
+				</action>
+			</item>
+			<item label="Fargoal">
+				<action name="Execute">
+					<execute>
+						fargoal
+					</execute>
+				</action>
+			</item>
+			<item label="Freecol">
+				<action name="Execute">
+					<execute>
+						freecol
+					</execute>
+				</action>
+			</item>
+			<item label="Freedink">
+				<action name="Execute">
+					<execute>
+						freedink
+					</execute>
+				</action>
+			</item>
+			<item label="Freedroid RPG">
+				<action name="Execute">
+					<execute>
+						freedroidRPG
+					</execute>
+				</action>
+			</item>
+			<item label="Frogatto">
+				<action name="Execute">
+					<execute>
+						frogatto
+					</execute>
+				</action>
+			</item>
+			<item label="Glest">
+				<action name="Execute">
+					<execute>
+						/usr/bin/megaglest
+					</execute>
+				</action>
+			</item>
+			<item label="Legends">
+				<action name="Execute">
+					<execute>
+						legends
+					</execute>
+				</action>
+			</item>
+			<item label="Le Monde de Mana">
+				<action name="Execute">
+					<execute>
+						mana
+					</execute>
+				</action>
+			</item>
+			<item label="Netpanzer">
+				<action name="Execute">
+					<execute>
+						netpanzer
+					</execute>
+				</action>
+			</item>
+			<item label="Netradiant">
+				<action name="Execute">
+					<execute>
+						/opt/netradiant/radiant.x86
+					</execute>
+				</action>
+			</item>
+			<item label="Neverball">
+				<action name="Execute">
+					<execute>
+						neverball
+					</execute>
+				</action>
+			</item>
+			<item label="Neverputt">
+				<action name="Execute">
+					<execute>
+						neverputt
+					</execute>
+				</action>
+			</item>
+			<item label="Nexuiz (GLX)">
+				<action name="Execute">
+					<execute>
+						/usr/bin/nexuiz-glx
+					</execute>
+				</action>
+			</item>
+			<item label="Nexuiz (SDL)">
+				<action name="Execute">
+					<execute>
+						/usr/bin/nexuiz-sdl
+					</execute>
+				</action>
+			</item>
+			<item label="OpenArena">
+				<action name="Execute">
+					<execute>
+						openarena
+					</execute>
+				</action>
+			</item>
+			<item label="Red Eclipse">
+				<action name="Execute">
+					<execute>
+						redeclipse
+					</execute>
+				</action>
+			</item>
+			<item label="Regnum online">
+				<action name="Execute">
+					<execute>
+						/opt/regnum/rolauncher
+					</execute>
+				</action>
+			</item>
+			<item label="Sauerbraten">
+				<action name="Execute">
+					<execute>
+						sauerbraten-client
+					</execute>
+				</action>
+			</item>
+			<item label="Secret Maryo Chronicles">
+				<action name="Execute">
+					<execute>
+						smc
+					</execute>
+				</action>
+			</item>
+			<item label="Spring">
+				<action name="Execute">
+					<execute>
+						spring
+					</execute>
+				</action>
+			</item>
+			<item label="Starfighter">
+				<action name="Execute">
+					<execute>
+						starfighter
+					</execute>
+				</action>
+			</item>
+			<item label="Slime Volley">
+				<action name="Execute">
+					<execute>
+						slimevolley
+					</execute>
+				</action>
+			</item>
+			<item label="Sudokuki">
+				<action name="Execute">
+					<execute>
+						sudokuki
+					</execute>
+				</action>
+			</item>
+			<item label="Tibia">
+				<action name="Execute">
+					<execute>
+						tibia
+					</execute>
+				</action>
+			</item>
+			<item label="Urban Terror">
+				<action name="Execute">
+					<execute>
+						urbanterror
+					</execute>
+				</action>
+			</item>
+			<item label="UT2004">
+				<action name="Execute">
+					<execute>
+						/opt/ut2004/ut2004
+					</execute>
+				</action>
+			</item>
+			<item label="VDrift">
+				<action name="Execute">
+					<execute>
+						vdrift
+					</execute>
+				</action>
+			</item>
+			<item label="Warzone 2100">
+				<action name="Execute">
+					<execute>
+						warzone2100
+					</execute>
+				</action>
+			</item>
+			<item label="Warsow">
+				<action name="Execute">
+					<execute>
+						/usr/bin/warsow
+					</execute>
+				</action>
+			</item>
+			<item label="Wesnoth">
+				<action name="Execute">
+					<execute>
+						wesnoth
+					</execute>
+				</action>
+			</item>
+			<item label="Wolfenstein: Enemy Territory">
+				<action name="Execute">
+					<execute>
+						enemy-territory
+					</execute>
+				</action>
+			</item>
+			<item label="Wormux">
+				<action name="Execute">
+					<execute>
+						wormux
+					</execute>
+				</action>
+			</item>
+			<item label="Xmoto">
+				<action name="Execute">
+					<execute>
+						xmoto
+					</execute>
+				</action>
+			</item>
+			<item label="Xonotic (GLX)">
+				<action name="Execute">
+					<execute>
+						/usr/bin/xonotic-glx
+					</execute>
+				</action>
+			</item>
+			<item label="Xonotic (SDL)">
+				<action name="Execute">
+					<execute>
+						/usr/bin/xonotic-sdl
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Reseau" label="Réseau">
+			<item label="Angry IP Scanner">
+				<action name="Execute">
+					<execute>
+						ipscan
+					</execute>
+				</action>
+			</item>
+			<item label="Chromium">
+				<action name="Execute">
+					<execute>
+						chromium
+					</execute>
+				</action>
+			</item>
+			<item label="FileZilla">
+				<action name="Execute">
+					<execute>
+						filezilla
+					</execute>
+				</action>
+			</item>
+			<item label="Firefox - Safe Mode">
+				<action name="Execute">
+					<execute>
+						firefox -safe-mode
+					</execute>
+				</action>
+			</item>
+			<item label="Firefox">
+				<action name="Execute">
+					<execute>
+						firefox
+					</execute>
+				</action>
+			</item>
+			<item label="Google Earth">
+				<action name="Execute">
+					<execute>
+						/usr/bin/googleearth
+					</execute>
+				</action>
+			</item>
+			<item label="Gwget">
+				<action name="Execute">
+					<execute>
+						gwget
+					</execute>
+				</action>
+			</item>
+			<item label="Httrack">
+				<action name="Execute">
+					<execute>
+						httrack
+					</execute>
+				</action>
+			</item>
+			<item label="Icecat">
+				<action name="Execute">
+					<execute>
+						icecat
+					</execute>
+				</action>
+			</item>
+			<item label="Jdownloader">
+				<action name="Execute">
+					<execute>
+						jdownloader
+					</execute>
+				</action>
+			</item>
+			<item label="Messagerie internet Pidgin">
+				<action name="Execute">
+					<execute>
+						pidgin
+					</execute>
+				</action>
+			</item>
+			<item label="nntpgrab-gtk (newsgroups)">
+				<action name="Execute">
+					<execute>
+						nntpgrab-gui
+					</execute>
+				</action>
+			</item>
+			<item label="pan (newsgroups)">
+				<action name="Execute">
+					<execute>
+						pan
+					</execute>
+				</action>
+			</item>
+			<item label="Midori">
+				<action name="Execute">
+					<execute>
+						midori
+					</execute>
+				</action>
+			</item>
+			<item label="OpenArena Server">
+				<action name="Execute">
+					<execute>
+						xterm -e openarena-server
+					</execute>
+				</action>
+			</item>
+			<item label="Opera (Snapshot)">
+				<action name="Execute">
+					<execute>
+						opera
+					</execute>
+				</action>
+			</item>
+			<item label="Opera widget manager">
+				<action name="Execute">
+					<execute>
+						opera-widget-manager
+					</execute>
+				</action>
+			</item>
+			<item label="Torrent search">
+				<action name="Execute">
+					<execute>
+						torrent-search
+					</execute>
+				</action>
+			</item>
+			<item label="Transmission">
+				<action name="Execute">
+					<execute>
+						transmission-gtk
+					</execute>
+				</action>
+			</item>
+			<item label="Tucan Manager">
+				<action name="Execute">
+					<execute>
+						tucan
+					</execute>
+				</action>
+			</item>
+			<item label="Uzbl">
+				<action name="Execute">
+					<execute>
+						uzbl-browser
+					</execute>
+				</action>
+			</item>
+			<item label="Wicd">
+				<action name="Execute">
+					<execute>
+						/usr/bin/wicd-client
+					</execute>
+				</action>
+			</item>
+			<item label="Wireshark">
+				<action name="Execute">
+					<execute>
+						gksu wireshark
+					</execute>
+				</action>
+			</item>
+			<item label="Zenmap (as root)">
+				<action name="Execute">
+					<execute>
+						/usr/share/zenmap/su-to-zenmap.sh
+					</execute>
+				</action>
+			</item>
+			<item label="Zenmap">
+				<action name="Execute">
+					<execute>
+						zenmap
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Programmation" label="Programmation">
+			<menu id="Programmation-732242" label="Boinc">
+				<item label="Boinc Manager">
+					<action name="Execute">
+						<execute>
+							~/.script/run_manager
+						</execute>
+					</action>
+				</item>
+				<item label="Boinc Client">
+					<action name="Execute">
+						<execute>
+							terminal -e ~/.script/run_client
+						</execute>
+					</action>
+				</item>
+			</menu>
+			<item label="Eteindre l'écran">
+				<action name="Execute">
+					<execute>
+						~/.script/ecran
+					</execute>
+				</action>
+			</item>
+			<item label="Idle3 pour python3">
+				<action name="Execute">
+					<execute>
+						idle3
+					</execute>
+				</action>
+			</item>
+			<item label="Mirror Archlinux">
+				<action name="Execute">
+					<execute>
+						terminal -e &quot;/media/TERATOR/mirror/scripts/repomirror.sh&quot;
+					</execute>
+				</action>
+			</item>
+			<item label="Réinitialiser le Son Alsa">
+				<action name="Execute">
+					<execute>
+						~/.script/volumealsa.sh
+					</execute>
+				</action>
+			</item>
+			<item label="Backup Opera">
+				<action name="Execute">
+					<execute>
+						terminal -e ~/.script/backup-opera
+					</execute>
+				</action>
+			</item>
+			<item label="RapidSVN">
+				<action name="Execute">
+					<execute>
+						rapidsvn
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Configuration" label="Configuration">
+			<menu id="Configuration-863627" label="Cairo">
+				<item label="Cairo compmgr stop">
+					<action name="Execute">
+						<execute>
+							killall cairo-compmgr
+						</execute>
+					</action>
+				</item>
+				<item label="Cairo compmgr start">
+					<action name="Execute">
+						<execute>
+							cairo-compmgr -r
+						</execute>
+					</action>
+				</item>
+			</menu>
+			<item label="Économiseur d'écran">
+				<action name="Execute">
+					<execute>
+						xscreensaver-demo
+					</execute>
+				</action>
+			</item>
+			<item label="Apparence">
+				<action name="Execute">
+					<execute>
+						lxappearance
+					</execute>
+				</action>
+			</item>
+			<item label="Applications favorites">
+				<action name="Execute">
+					<execute>
+						exo-preferred-applications
+					</execute>
+				</action>
+			</item>
+			<item label="Gestionnaire de fichiers">
+				<action name="Execute">
+					<execute>
+						thunar-settings
+					</execute>
+				</action>
+			</item>
+			<item label="NVIDIA X Server Settings">
+				<action name="Execute">
+					<execute>
+						/usr/bin/nvidia-settings
+					</execute>
+				</action>
+			</item>
+			<item label="Openbox Configuration Manager">
+				<action name="Execute">
+					<execute>
+						obconf
+					</execute>
+				</action>
+			</item>
+			<item label="Qt Config">
+				<action name="Execute">
+					<execute>
+						/usr/bin/qtconfig
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Outils" label="Outils système">
+			<item label="BleachBit (Admin)">
+				<action name="Execute">
+					<execute>
+						bleachbit-admin
+					</execute>
+				</action>
+			</item>
+			<item label="BleachBit">
+				<action name="Execute">
+					<execute>
+						bleachbit
+					</execute>
+				</action>
+			</item>
+			<item label="ClamTK">
+				<action name="Execute">
+					<execute>
+						clamtk
+					</execute>
+				</action>
+			</item>
+			<item label="FSlint">
+				<action name="Execute">
+					<execute>
+						fslint-gui
+					</execute>
+				</action>
+			</item>
+			<item label="GParted">
+				<action name="Execute">
+					<execute>
+						gksu /usr/sbin/gparted
+					</execute>
+				</action>
+			</item>
+			<item label="Grsync">
+				<action name="Execute">
+					<execute>
+						grsync
+					</execute>
+				</action>
+			</item>
+			<item label="Gshutdown">
+				<action name="Execute">
+					<execute>
+						gshutdown
+					</execute>
+				</action>
+			</item>
+			<item label="Gtkpacman">
+				<action name="Execute">
+					<execute>
+						gksu gtkpacman
+					</execute>
+				</action>
+			</item>
+			<item label="Gestionnaire de Fichiers Thunar">
+				<action name="Execute">
+					<execute>
+						Thunar
+					</execute>
+				</action>
+			</item>
+			<item label="Pacupdate">
+				<action name="Execute">
+					<execute>
+						pacupdate
+					</execute>
+				</action>
+			</item>
+			<item label="PCMan File Manager">
+				<action name="Execute">
+					<execute>
+						pcmanfm-mod
+					</execute>
+				</action>
+			</item>
+			<item label="Renommer en masse">
+				<action name="Execute">
+					<execute>
+						/usr/lib/ThunarBulkRename
+					</execute>
+				</action>
+			</item>
+			<item label="Shaman">
+				<action name="Execute">
+					<execute>
+						shaman
+					</execute>
+				</action>
+			</item>
+			<item label="Sun VirtualBox">
+				<action name="Execute">
+					<execute>
+						VirtualBox
+					</execute>
+				</action>
+			</item>
+			<item label="rtorrent">
+				<action name="Execute">
+					<execute>
+						terminal -e rtorrent
+					</execute>
+				</action>
+			</item>
+			<item label="Terminal">
+				<action name="Execute">
+					<execute>
+						Terminal
+					</execute>
+				</action>
+			</item>
+			<item label="UNetbootin">
+				<action name="Execute">
+					<execute>
+						xterm -e su -c /usr/sbin/unetbootin
+					</execute>
+				</action>
+			</item>
+			<item label="Urxvt">
+				<action name="Execute">
+					<execute>
+						urxvt
+					</execute>
+				</action>
+			</item>
+			<item label="Xkill">
+				<action name="Execute">
+					<execute>
+						xkill
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="Configuration de Openbox" label="Configuration de Openbox">
+			<item label="Reconfigurer Openbox">
+				<action name="Reconfigure"/>
+			</item>
+			<item label="Openbox Configuration Manager">
+				<action name="Execute">
+					<execute>
+						obconf
+					</execute>
+				</action>
+			</item>
+			<item label="Configurer les applications au démarrage">
+				<action name="Execute">
+					<execute>
+						gvim /home/wido/.config/openbox/autostart.sh
+					</execute>
+				</action>
+			</item>
+			<item label="Editer le fichier rc.xml">
+				<action name="Execute">
+					<execute>
+						gvim /home/wido/.config/openbox/rc.xml
+					</execute>
+				</action>
+			</item>
+			<item label="Configurer le menu">
+				<action name="Execute">
+					<execute>
+						obmenu
+					</execute>
+				</action>
+			</item>
+			<separator label="Configuration de obmenugen"/>
+			<item label="Éditer la configuration d'obmenugen">
+				<action name="Execute">
+					<execute>
+						xterm -e nano /home/wido/.config/obmenugen/obmenugen.cfg
+					</execute>
+				</action>
+			</item>
+			<item label="Éditer les exclusions d'obmenugen">
+				<action name="Execute">
+					<execute>
+						xterm -e nano /home/wido/.config/obmenugen/exclusions
+					</execute>
+				</action>
+			</item>
+			<item label="Éditer le schema de obmenugen">
+				<action name="Execute">
+					<execute>
+						xterm -e nano /home/wido/.config/obmenugen/obmenugen.schema
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<item label="Afficher le bureau">
+			<action name="Execute">
+				<execute>
+					wmctrl -k on
+				</execute>
+			</action>
+		</item>
+		<item label="Verrouiller l'écran">
+			<action name="Execute">
+				<execute>
+					xscreensaver -command -lock
+				</execute>
+			</action>
+		</item>
+		<item label="Quitter/Redémarrer">
+			<action name="Execute">
+				<execute>
+					python '/home/wido/.script/python/oblogout.py'
+				</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>
