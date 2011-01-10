@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# script du 8-05-09
+####################################
+#		DEPENDANCES
+#	-ffmpeg
+#	-nautilus
+#	-gnome
+#
+####################################
+#	parametre de videoPSP9
+# Fonctionnalité
+# création d'une vidéo compatible avec un firmware récent et d'une vignette
+#
+# -map 0:2 selectionne le stream 2
+#Input #0, mpeg, from '/home/wido/video.vob':
+#  Duration: 02:18:25.95, start: 0.049756, bitrate: 6093 kb/s
+#    Stream #0.0[0x1e0]: Video: mpeg2video, yuv420p, 720x576 [PAR 64:45 DAR 16:9], 9800 kb/s, 25 fps, 25 tbr, 90k tbn, 50 tbc
+#    Stream #0.1[0x84]: Audio: ac3, 48000 Hz, stereo, s16, 192 kb/s
+#    Stream #0.2[0x83]: Audio: ac3, 48000 Hz, stereo, s16, 192 kb/s
+#    Stream #0.3[0x82]: Audio: ac3, 48000 Hz, stereo, s16, 192 kb/s
+#    Stream #0.4[0x81]: Audio: ac3, 48000 Hz, 5.1, s16, 448 kb/s
+#    Stream #0.5[0x80]: Audio: ac3, 48000 Hz, 5.1, s16, 448 kb/s
+# le premier -map est pour la vidéo et l'autre pour l'audio.
+####################################
+# Pour ripper un DVD prendre la piste DTS et non pas AC52
+####################################
+#
+if [ $# -eq 0 ]; then
+    zenity --error --title="Erreur" --text="Vous devez choisir au moins un fichier pour lancer la conversion"
+    exit 1
+fi
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0 
+    fi
+
+(echo ""; (while [ $# -gt 0 ]; do
+    movie=$1
+    #mplayer -dvd-device "$movie" dvd://1 -vo null -frames 0 2>&1 -v | grep aid
+
+ffmpeg -i "$movie" -threads 4 -r 29.97 -alang fr -acodec libfaac -ab 128k -ac 2 -ar 48000 -vcodec libx264 -level 21 -b 768k -coder 1 -f psp -flags +loop -cmp +chroma -trellis 2 -partitions +parti4x4+partp8x8+partb8x8 -flags2 +mixed_refs -me_method umh -subq 6 -trellis 1 -refs 3 -me_range 16 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -qmin 10 -qmax 51 -qdiff 4 -g 250 -s 480x272 "${movie%.*}".mp4;
+ffmpeg -i "$movie" -f image2 -ss 5 -vframes 1 -s 160x120 "${movie%.*}".jpg
+shift
+done
+)) | zenity --progress --title "PSP" --text="Encodage de $1 en cours" --pulsate
+#       zenity --progress --pulsate --auto-close --text="Conversion en cours ..."  --percentage=0 
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0 
+    fi
+    zenity --info --title "PSP" --text="Conversion complete"
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0 
+    fi
+

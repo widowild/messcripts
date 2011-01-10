@@ -1,0 +1,21 @@
+Le fichier __init__.py ci-joint est la version corrigée
+du fichier de même nom fourni avec Cherrypy-3.2.Orc1-py3
+(lequel peut provoquer une erreur "invalid buffer size"
+ au démarrage, avec Python 3.1).
+
+Il faut installer ce fichier dans le sous-répertoire
+/wsgiserver du répertoire /cherrypy , en remplacement
+du fichier de même nom qui s'y trouve.
+
+Si vous avez installé Cherrypy sous Windows à l'aide de
+l'installeur exécutable, le répertoire /cherrypy devrait
+se trouver dans :
+
+C:\Python31\lib\site-packages
+
+Si vous avez installé Cherrypy sous Linux (Ubuntu) à
+l'aide de la commande :  ./setup.py install ,
+le répertoire /cherrypy devrait se trouver dans :
+
+/usr/local/lib/python3.1/dist-packages
+

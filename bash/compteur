@@ -1,0 +1,29 @@
+#!/bin/bash
+#télécharger une série de fichier ayant juste le chiffre qui change
+# http://test01.jpg
+# http://test02.jpg
+# ...
+#http://stream2.brandnewfaces.com/media/flashServer/ (dead)
+# http://m1.members.brandnewfaces.com//flv/ (2009)
+# http://mc10.brandnewfaces.com/u/images/videos/v7160/01.jpg
+
+fct_LIEN ()
+{
+for ((i=7158 ; 8000 - $i ; i++))
+
+    do echo "http://m1.members.brandnewfaces.com//flv/v"$i"/v"$i"_high_md.flv"
+	wget -c "http://m1.members.brandnewfaces.com//flv/v"$i"/v"$i"_high_md.flv"
+done
+}
+
+fct_LIEN2010 ()
+{
+for ((i=7158 ; 8000 - $i ; i++))
+
+    do echo "http://mc10.brandnewfaces.com/r//flv/v"$i"/v"$i"_high_md.flv"
+	wget -c "http://mc10.brandnewfaces.com/r//flv/v"$i"/v"$i"_high_md.flv"
+done
+}
+
+
+fct_LIEN2010

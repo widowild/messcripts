@@ -1,0 +1,16 @@
+Vous trouverez dans ce repertoire les exemples de code et les
+solutions des exercices correspondant a l'ouvrage :
+"Apprendre a programmer avec Python 3" de Gerard Swinnen, dans
+ses versions posterieures au 01/01/2010.
+Ces exemples ne fonctionneront pas avec les versions de Python
+anterieures a la version 3.0.
+
+Les exemples adaptes aux versions de Python anterieures a la
+version 3.0 se trouvent dans le sous-repertoire /python2.
+
+Le sous-repertoire /correctif_cherrypy_python3 contient un
+fichier de remplacement pour cherrypy si vous rencontrez une
+erreur au demarrage de celui-ci sous Python 3.1
+
+
+

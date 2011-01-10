@@ -1,0 +1,94 @@
+#!/bin/sh
+#Script du 16/07/2009
+#cree par wido
+# Historique :
+# 16/07/2009
+# sauvergarde dictionnaire, unite
+# version 4440 alpha
+# 23/01/2009
+# sauvergarde USERJS
+# 3/11/2008
+# sauvergarde widget et skin
+# 8/10/2008
+# modifie partiel du script
+# 30/09/2008
+#  creation du script
+############################
+#se mettre dans le dossier opera
+
+#!/bin/bash
+#
+####################################
+#
+lancement()
+{
+	vdate=$(date -u +%d%m%y)
+	DOSSIEROPERA=/home/$USER/.opera
+	DOSSIER_DESTINATION=/tmp/opera$vdate
+	DOSSIER_RECEPTION=/home/$USER/
+	FICHIER_SAUVERGARDE=opera$vdate
+	rm -R $DOSSIER_DESTINATION
+	rm $DOSSIER_RECEPTION/$FICHIER_SAUVERGARDE.tar
+	mkdir $DOSSIER_DESTINATION
+	cd $DOSSIEROPERA
+	echo "10" ; sleep 1
+	echo "# Sauvergarde de la liste du filtre url" ; sleep 1
+	cp urlfilter.ini $DOSSIER_DESTINATION
+	echo "20" ; sleep 1
+	echo "# Sauvergarde des mots de passe" ; sleep 1
+	cp wand.dat $DOSSIER_DESTINATION
+	echo "30" ; sleep 1
+	echo "# Sauvergarde du dictionnaire" ; sleep 1
+	cp -R ./dictionaries/ $DOSSIER_DESTINATION/dictionaries
+	echo "50" ; sleep 1
+	echo "# Sauvergarde des paramètres personnels" ; sleep 1
+	cp opera6.adr $DOSSIER_DESTINATION
+	cp bookmarks.adr $DOSSIER_DESTINATION
+    cp bookmarks.ini $DOSSIER_DESTINATION
+	cp opera6.ini $DOSSIER_DESTINATION
+	cp notes.adr $DOSSIER_DESTINATION
+	cp operaprefs.ini $DOSSIER_DESTINATION
+	cp search.ini $DOSSIER_DESTINATION
+	cp speeddial.ini $DOSSIER_DESTINATION
+	cp pluginpath.ini $DOSSIER_DESTINATION
+	cp ouw952_fr.lng $DOSSIER_DESTINATION
+	cp opera-newsfeeds.opml $DOSSIER_DESTINATION
+	echo "60" ; sleep 1
+	echo "# Sauvergarde des widgets , skins, UserJS" ; sleep 1
+	cp -R ./skin/ $DOSSIER_DESTINATION/skin
+	cp -R ./widgets/ $DOSSIER_DESTINATION/widgets
+    cp ./temporary_downloads/*.wgt $DOSSIER_DESTINATION/widgets
+	cp -R ./UserJS/ $DOSSIER_DESTINATION/UserJS
+	cp -R ./dictionaries/ $DOSSIER_DESTINATION/dictionaries
+	echo "70" ; sleep 1
+	echo "# Sauvergarde des contacts et comptes mails" ; sleep 1
+	cp contacts.adr $DOSSIER_DESTINATION
+	mkdir $DOSSIER_DESTINATION/mail
+	cp ./mail/accounts.ini $DOSSIER_DESTINATION/mail
+	echo "75" ; sleep 1
+	echo "# Sauvergarde du service Unite" ; sleep 1
+	cp unite.adr $DOSSIER_DESTINATION
+	echo "80" ; sleep 1
+	echo "# Compression du fichier en cours" ; sleep 1
+	tar -cvf $DOSSIER_DESTINATION/$FICHIER_SAUVERGARDE.tar $DOSSIER_DESTINATION/
+	cp $DOSSIER_DESTINATION/$FICHIER_SAUVERGARDE.tar $DOSSIER_RECEPTION/
+	echo "100" ; sleep 1
+}
+(echo ""; lancement) | zenity --progress --title "Opera" --text="Sauvergarde de Opera en cours" --pulsate
+
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0 
+    fi
+
+zenity --question --title "Opera" --text "$@ \
+Sauvergarde de Opera terminé ."
+
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0
+    fi
+exit 1
+

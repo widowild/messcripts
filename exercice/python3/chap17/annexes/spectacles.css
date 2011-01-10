@@ -1,0 +1,47 @@
+body             { color:black;
+                   background-color:PaleGoldenRod;
+                   margin:0 0 0 0; padding:5 12 5 12;
+                   border-style: solid; border-width: 15;
+                   border-color:DarkKhaki;
+                   font-family:avantgarde,sans-serif;
+                   font-size:11pt; }
+
+img              { margin:5 20 5 10;
+                   border-width:0;
+                   vertical-align:middle; }
+
+a:active         { color: red; }
+a:visited        { color: #551a8b; }
+a:link           { color: #0000bb; }
+a:hover          { color: #df0000; }
+
+h1, h2           { font-family:times,serif; font-style:italic;
+                   font-weight:bold;  color:FireBrick;
+                   background:ivory; border-color: gray;
+                   border-style: solid; border-width: 1 2 2 1; }
+
+h3, h4, h5, h6   { font-family: avantgarde, sans-serif; }
+h1               { font-size: 250%; }
+h2               { font-size: 180%; }
+h3               { font-size: 110%; font-weight: bold; }
+h4               { font-size: 103%; font-weight: bold; }
+
+ul               { list-style-type:circle; }
+li               { margin: 3 0 3 0; }
+
+table            { margin: 5 0 5 0;
+                   font-family:sans-serif;
+                   background-color:GreenYellow;
+                   border-style: solid; border-width: 5 5 5 5;
+                   border-color:DarkKhaki; }
+
+td               { text-align:center; padding: 2 5 2 5; }
+
+tr               { background-color:NavajoWhite; height:15px; }
+
+input            { margin: 0 0 0 5; padding: 1 2 1 2;
+                   background-color:Bisque;
+                   font-size: 105%; font-weight: bold; }
+
+.button          { margin:3 2 3 2;  padding:2 5 2 5;
+                   color:black; background-color:Gainsboro; }

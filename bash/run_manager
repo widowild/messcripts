@@ -1,0 +1,3 @@
+#!/bin/bash
+#lancer boinc (svn)
+cd "/var/lib/boinc" && exec boincmgr $@

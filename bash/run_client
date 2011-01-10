@@ -1,0 +1,3 @@
+#!/bin/bash
+#lancer pypanel 
+cd "/var/lib/boinc" && exec boinc $@

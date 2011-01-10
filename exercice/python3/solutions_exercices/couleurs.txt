@@ -1,0 +1,10 @@
+bleu #2222FF
+jaune #FFFF00
+vert #00FF00
+ocre #EECC55
+pourpre #EE00FF
+rouge #FF2200
+orange #ffc045
+cyan #00FFFF
+magenta #FF00FF
+blanc #FFFFFF

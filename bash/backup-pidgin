@@ -1,0 +1,68 @@
+#!/bin/sh
+#Script du 9/07/2009
+############################
+#se mettre dans le dossier pidgin
+
+#!/bin/bash
+#
+####################################
+#
+lancement()
+{
+	vdate=$(date -u +%d%m%y)
+	DOSSIEROPERA=~/.purple
+	DOSSIER_DESTINATION=/tmp/purple$vdate
+	DOSSIER_RECEPTION=~/
+	FICHIER_SAUVERGARDE=purple$vdate
+	rm -R $DOSSIER_DESTINATION
+	rm $DOSSIER_RECEPTION/$FICHIER_SAUVERGARDE.tar
+	mkdir $DOSSIER_DESTINATION
+	cd $DOSSIEROPERA
+	echo "10" ; sleep 1
+	echo "# Sauvergarde des certifications" ; sleep 1
+	cp -R ./certificates/ $DOSSIER_DESTINATION/certificates
+	echo "20" ; sleep 1
+	echo "# Sauvergarde des smiley" ; sleep 1
+	cp -R ./custom_smiley/ $DOSSIER_DESTINATION/custom_smiley
+	echo "30" ; sleep 1
+	echo "# Sauvergarde des icons" ; sleep 1
+	cp -R ./icons/ $DOSSIER_DESTINATION/icons
+	echo "40" ; sleep 1
+	echo "# Sauvergarde des logs" ; sleep 1
+	cp -R ./logs/ $DOSSIER_DESTINATION/logs
+	echo "50" ; sleep 1
+	echo "# Sauvergarde des smileys" ; sleep 1
+	cp -R ./smileys/ $DOSSIER_DESTINATION
+	echo "60" ; sleep 1
+	echo "# Sauvergarde des comptes, préférences, du statuts" ; sleep 1
+	cp ./accels $DOSSIER_DESTINATION
+	cp ./accounts.xml $DOSSIER_DESTINATION
+	cp ./blist.xml $DOSSIER_DESTINATION
+	cp ./prefs.xml $DOSSIER_DESTINATION
+	cp ./smileys.xml $DOSSIER_DESTINATION
+	cp ./status.xml $DOSSIER_DESTINATION
+	cp ./xmpp-caps.xml $DOSSIER_DESTINATION
+	echo "80" ; sleep 1
+	echo "# Compression du fichier en cours" ; sleep 1
+	tar -cvf $DOSSIER_DESTINATION/$FICHIER_SAUVERGARDE.tar $DOSSIER_DESTINATION/
+	cp $DOSSIER_DESTINATION/$FICHIER_SAUVERGARDE.tar $DOSSIER_RECEPTION/
+	echo "100" ; sleep 1
+}
+(echo ""; lancement) | zenity --progress --title "Pidgin" --text="Sauvergarde de Pidgin en cours" --pulsate
+
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0 
+    fi
+
+zenity --question --title "Pidgin" --text "$@ \
+Sauvergarde de Pidgin terminé ."
+
+## Si on clic sur Annuler...
+if [ $? -ne 0 ]
+    then
+        exit 0
+    fi
+exit 1
+
