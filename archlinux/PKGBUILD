@@ -1,7 +1,7 @@
 # Maintainer: wido <widomaker2k7@gmail.com>
 
 pkgname=messcripts
-pkgver=20101225
+pkgver=20110110
 pkgrel=1
 pkgdesc="Creation de scripts personnels pour python 3"
 url="http://github.com/widowild/messcripts"
@@ -17,7 +17,7 @@ _gitroot="git://github.com/widowild/messcripts.git"
 _gitname="messcripts"
 
 build() {
-  msg "Connecting to gitorious.org GIT server...."
+  msg "Connecting to github.com GIT server...."
 
 if [ -d $srcdir/$_gitname ] ; then
    cd $_gitname && git pull origin
@@ -33,7 +33,10 @@ rm -rf ${srcdir}/${_gitname}-build
 cp -r ${srcdir}/${_gitname} ${srcdir}/${_gitname}-build
 
 install -d ${pkgdir}/opt/${pkgname}/usr/bin
-install -Dm 755 ${srcdir}/${_gitname}-build/*.py ${pkgdir}/opt/${pkgname}/usr/bin/
-# License 
+# Python
+install -Dm 755 ${srcdir}/${_gitname}-build/python/*.py ${pkgdir}/opt/${pkgname}/usr/bin/
+# Bash
+install -Dm 755 ${srcdir}/${_gitname}-build/bash/* ${pkgdir}/opt/${pkgname}/usr/bin/
+# License
 install -Dm 644 ${srcdir}/${_gitname}-build/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
 }

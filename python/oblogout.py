@@ -15,13 +15,13 @@ def logout():
     print('résultat:', pid1)
 # Reboot
 def reboot():
-    pid2 = subprocess.Popen('dbus-send --system --print-reply --dest="org.freedesktop.Hal" /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.Reboot', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).pid
+    pid2 = subprocess.Popen('dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).pid
     print('résultat:', pid2)
     fen1.destroy()
 
 # Shutdown
 def shutdown():
-    pid3 = subprocess.Popen('dbus-send --system --print-reply --dest="org.freedesktop.Hal" /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.Shutdown', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).pid
+    pid3 = subprocess.Popen('dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).pid
     print('résultat:', pid3)
     fen1.destroy()
 

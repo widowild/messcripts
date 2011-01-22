@@ -13,7 +13,12 @@ home, fichier, temporaire, lock, lastsync = "/media/TERATOR/mirror", "/files", "
 target = home + fichier
 tmp = home + temporaire
 lastsync = target + lastsync
-source = 'mirrors.uk2.net::archlinux'
+# Any
+source = "mirrors.kernel.org::archlinux"
+# Great Britain
+#source = "mirrors.uk2.net::archlinux"
+# Germany
+#source = "ftp5.gwdg.de::archlinux"
 
 # Affichage des données
 print("Lieu du stockage :", home)
@@ -38,7 +43,7 @@ except:
 if not os.path.isfile(lock): # test existence d'un fichier
     print("creation du fichier", lock)
     open(lock,"w") # creer un fichier lock
-    subprocess.call(['rsync', '-rtlvH', '--safe-links', '--delete-after', '--progress', '-h', '--delay-updates', '--no-motd', '--bwlimit=1000', '--temp-dir='+tmp , "--exclude='*.links.tar.gz*'", "--exclude='/other'", "--exclude='/sources'", source, target])
+    subprocess.call(['rsync', '-rtlvH', '--safe-links', '--delete-after', '--progress', '-h', '--delay-updates', '--no-motd', '--bwlimit=1000', '--temp-dir='+tmp , '--exclude=*.links.tar.gz*', '--exclude=/other', '--exclude=/sources', source, target])
     print("suppression du fichier", lock)
     os.remove(lock)
 
