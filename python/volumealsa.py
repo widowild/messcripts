@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # -*- coding:Utf-8 -*-
+# Monte le son de 80 en utilisant amixer
 
-import subprocess, os
+import subprocess
+import os
 
 volume = ['80', '0']
 print("volume maximal:", volume[0], "%") # afficher la valeur maximum
 print("volume minimal:", volume[1], "%") # afficher la valeur minumum
 
-p = os.system("amixer scontrols |cut -d',' -f1 | sed -e "s/'//g" |awk '{print $4, $5, $6}'")
+#p = subprocess.Popen(['amixer', 'scontrols'], stdout=subprocess.PIPE)
+p = subprocess.call(['amixer','scontrols'], stdout=subprocess.PIPE)
+#subprocess.call(['amixer','scontrols', "|cut -d',' -f1", "| sed -e "s/'//g"", "|awk '{print $4, $5, $6}'"])
+
 print(p)
 #amixer scontrols |cut -d',' -f1 | sed -e "s/'//g" |awk '{print $4, $5, $6}' | sort | uniq >> /tmp/amixer.log
 

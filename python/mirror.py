@@ -3,6 +3,10 @@
 #=================
 # Dépot mirror pour archlinux (32 bits et 64 bits)
 
+## a faire:
+# supprimer les dossiers en .~tmp~
+# find /media/TERATOR/mirror/ -type d -name .~tmp~
+
 import os
 import time # pour convertir le time ctime en date plus lisible.
 import sys # Pour quitter le programme
