@@ -12,22 +12,38 @@ import time # pour convertir le time ctime en date plus lisible.
 import sys # Pour quitter le programme
 import subprocess # Appel de la commande subprocess.call()
 import linecache # pour lire la 1ere ligne du fichier lastsync
+import urllib.request # tester le site source
+
+# Choix du site mirror
+# Any
+site = "mirrors.kernel.org"
+# Great Britain
+# site = "mirrors.uk2.net"
+# Germany
+# site = "ftp5.gwdg.de"
 
 home, fichier, temporaire, lock, lastsync = "/media/TERATOR/mirror", "/files", "/tmp", "/tmp/mirrorsync.lck", "/lastsync"
 target = home + fichier
 tmp = home + temporaire
 lastsync = target + lastsync
-# Any
-source = "mirrors.kernel.org::archlinux"
-# Great Britain
-#source = "mirrors.uk2.net::archlinux"
-# Germany
-#source = "ftp5.gwdg.de::archlinux"
+distribution = "archlinux"
+source = site + "::" + distribution
 
 # Affichage des données
 print("Lieu du stockage :", home)
 print("Dossier des fichiers :", target)
 print("Source :", source)
+
+# Tester le site.
+req = urllib.request.Request("http://"+site)
+try: urllib.request.urlopen(req)
+except urllib.error.URLError as e:
+    print(site, "hors ligne ou probleme de connexion")
+    print(e.reason)
+# suppression du fichier lock
+    os.remove(lock)
+    sys.exit()
+
 
 # Creation des dossiers si besoin
 try:
