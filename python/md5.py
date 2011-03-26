@@ -27,10 +27,6 @@ fen1.maxsize(width=300, height=60)
 fen1.minsize(width=300, height=30)
 fen1.resizable(width=YES, height=NO)
 
-# Afficher le chemin du fichier
-#lbl = Label(fen1, textvariable=fichier,width=160)
-#lbl.pack()
-
 # Valeur md5
 myString=StringVar()
 Entry(fen1, textvariable=myString, width=160).pack()

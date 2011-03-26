@@ -74,13 +74,18 @@ if not os.path.isfile(lock): # test existence d'un fichier
         # donne en retour: Mon Nov 15 18:01:59 2010
         vlastsync = linecache.getline(lastsync,1).rstrip('\n')
         vlastsync = int(vlastsync)
-        print("Non mis à jour depuis",(mlastsync - vlastsync) / 3600, "heures" )
 
-        subprocess.call(['rsync', '-rtlvH', '--safe-links', '--delete-after', '--progress', '-h', '--delay-updates', '--no-motd', '--bwlimit=1000', '--temp-dir='+tmp , '--exclude=*.links.tar.gz*', '--exclude=/other', '--exclude=/sources', source, target])
-        print("suppression du fichier", lock)
-        os.remove(lock)
-        print("Dernière mise à jour:", time.ctime(vlastsync))
-        linecache.clearcache() # On vide le cache
+        if vlastsync == mlastsync: # comparaison dépot et miroir
+            print("le dépot est déjà à jour.")
+            os.remove(lock)
+            sys.exit()
+        else :
+            print("Non mis à jour depuis",(mlastsync - vlastsync) / 3600, "heures" )
+            subprocess.call(['rsync', '-rtlvH', '--safe-links', '--delete-after', '--progress', '-h', '--delay-updates', '--no-motd', '--bwlimit=1000', '--temp-dir='+tmp , '--exclude=*.links.tar.gz*', '--exclude=/other', '--exclude=/sources', source, target])
+            print("suppression du fichier", lock)
+            os.remove(lock)
+            print("Dernière mise à jour:", time.ctime(vlastsync))
+            linecache.clearcache() # On vide le cache
 
 else :
     print("Impossible d'exécuter le script")
